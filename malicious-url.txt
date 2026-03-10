@@ -1,0 +1,48 @@
+# =====================================================
+# MALICIOUS & SAFE URL TEST LIST
+# Threat Intelligence Sharing Platform - MISP Project
+# =====================================================
+# HOW TO TEST:
+# 1. Run the Django server: python manage.py runserver
+# 2. Login as an employee at http://127.0.0.1:8000/UserLogin.html
+# 3. Go to "Access Web Resources" and enter any URL below
+# =====================================================
+
+# --- 10 TEST DOMAINS (From Local Blocklist) ---
+# I have added these to a file called blocklist.txt. 
+# They will show as MALICIOUS even when the API is offline.
+
+www.vzr8ewbr91ro62ntalby90mtqz81c9zv.ocalam.com
+www.usmatamesklogi9.godaddysites.com
+www.secure-login-paypal-update.com
+www.appleid-security-update.info
+www.amazon-security-update.net
+www.bankofamerica.account-secure.com
+www.login-instagram-verify.com
+www.paypal-secure-login.xyz
+www.microsoft-alert-help.com
+www.auths-en-ladgerer-livewlt.webflow.io
+
+# --- 20 SAFE SITES (From Local Safe List) ---
+# These are always ALLOWED even if the API is offline.
+
+www.google.com
+www.yahoo.com
+www.amazon.com
+www.amazon.in
+www.flipkart.com
+www.microsoft.com
+www.github.com
+www.facebook.com
+www.instagram.com
+www.twitter.com
+www.linkedin.com
+www.apple.com
+www.netflix.com
+www.youtube.com
+www.wikipedia.org
+www.gmail.com
+www.outlook.com
+www.bing.com
+www.zoom.us
+www.stackoverflow.com

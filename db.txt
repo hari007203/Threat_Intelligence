@@ -1,0 +1,18 @@
+create database threat;
+use threat;
+
+create table employees(username varchar(50) primary key,
+password varchar(50),
+phone_no varchar(50),
+email varchar(50),
+address varchar(50),
+department varchar(200),
+salary varchar(40),
+work_desc varchar(80));
+
+create table threats(username varchar(50),
+visiting_url varchar(80),
+url_classification varchar(150),
+activity_type varchar(150),
+activity_date date);
+

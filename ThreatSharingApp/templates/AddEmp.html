@@ -1,0 +1,154 @@
+{% load static %}
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Intelligence Sharing Platform</title>
+<meta name="keywords" content="" />
+<meta name="Premium Series" content="" />
+<link href="{% static 'default.css' %}" rel="stylesheet" type="text/css" media="screen" />
+<script language="javascript">
+	function validate(formObj)
+	{
+	if(formObj.t1.value.length==0)
+	{
+	alert("Please Enter username");
+	formObj.t1.focus();
+	return false;
+	}
+	if(formObj.t2.value.length==0)
+	{
+	alert("Password image must be uploaded");
+	formObj.t2.focus();
+	return false;
+	}
+	if(formObj.t3.value.length==0)
+	{
+	alert("Please enter phone no");
+	formObj.t3.focus();
+	return false;
+	}
+	if(!formObj.t3.value.match(/^\d{10}$/)){
+		window.alert("Valid phone no must be enter");
+		formObj.t3.focus();
+		return false;
+	}
+	if(formObj.t4.value.length==0)
+	{
+	alert("Please enter email id");
+	formObj.t4.focus();
+	return false;
+	}
+	var filter = /^([a-zA-Z0-9_\.\-])+\@([a-z]+\.)+(com)+$/;
+    if (!filter.test(formObj.t4.value)) {
+		window.alert('Please enter valid email address');
+		formObj.t4.focus();
+		return false;
+	}
+	if(formObj.t5.value.length==0)
+	{
+	alert("Please enter address");
+	formObj.t5.focus();
+	return false;
+	}
+	if(formObj.t7.value.length==0)
+	{
+	alert("Please enter salary");
+	formObj.t7.focus();
+	return false;
+	}
+	if(formObj.t8.value.length==0)
+	{
+	alert("Please enter work description");
+	formObj.t8.focus();
+	return false;
+	}
+	return true;
+	}
+	</script>
+</head>
+<body>
+<!-- start header -->
+<div id="header">
+	<div id="logo">
+		<h1><span><center>Threat Intelligence Sharing Platform Implementation using MISP
+
+</center></span></h1>
+		
+	</div>
+	<div id="menu">
+		<ul id="main">
+			<li><a href="{% url 'AddEmp' %}"><font size="3" color="white">Add Employee Details</a></li><td></td>
+			<li><a href="{% url 'ViewThreats' %}"><font size="3" color="white">View Threat Log</a></li><td></td>
+			<li><a href="{% url 'VisualizeThreat' %}"><font size="3" color="white">Visualize Threat Activities</a></li><td></td>
+			<li><a href="{% url 'index' %}"><font size="3" color="white">Logout</a></li><td></td>
+			<td></td>
+			
+     
+		</ul>
+		
+	</div>
+	
+</div>
+
+<div id="wrapper">
+	<!-- start page -->
+	<div id="page">
+		 <form name ="frm" method="post" action="AddEmpAction" onsubmit="return validate(this);">
+		<!-- start content -->
+		<div id="content">
+		<div class="flower"><center><img src="{% static 'images/tra.jpg' %}" alt="" width="660" height="100" /></center></div>
+			<br/><br/>
+			<div class="flower"><center><h1>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			Add New Employee Screen<h1></div>
+			<br/>
+			
+			
+	{% csrf_token %}
+		
+			<center><font size="3" color="red">{{ data|safe }}</font></center>
+		
+			<table align="right">
+<tr><td><font size="3" color="black">Username</td><td><input type="text" name="t1" size="25"/></td></tr>
+<tr><td><font size="3" color="black">Password</td><td><input type="password" name="t2" size="25"/> 
+<tr><td><font size="3" color="black">Contact&nbsp;No</td><td><input type="text" name="t3" size="15"/> 
+<tr><td><font size="3" color="black">Email&nbsp;ID</td><td><input type="text" name="t4" size="35"/> 
+<tr><td><font size="3" color="black">Address</td><td><input type="text" name="t5" size="45"/> 
+
+<tr><td><font size="3" color="black">Department</td><td><select name="t6">
+<option value="Accounts">Accounts</option>
+<option value="Customer Support">Customer Support</option>
+<option value="Sales">Sales</option>
+<option value="Other">Other</option>
+</select>
+</td></tr>
+
+
+<tr><td><font size="3" color="black">Salary</td><td><input type="number" name="t7" size="15"/> 
+
+<tr><td><font size="3" color="black">Work&nbsp;Description</td><td><input type="text" name="t8" size="35"/> 
+
+</td></tr>
+<tr><td></td><td><input type="submit" value="Submit"></td>
+</td></tr></table>
+</form>
+			</table>
+			</center><br /><div class="post">
+				
+				<div class="entry">
+					
+				</div>
+			</div>
+		</div>
+		<!-- end content -->
+		<!-- start sidebars -->
+		
+		<!-- end sidebars -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	<!-- end page -->
+</div>
+</body>
+</html>
+
+
